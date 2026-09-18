@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Resume Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🤖 ResumeAI</div>
+
+        <h1>AI Resume Analyzer</h1>
+
+        <p>
+            Analyze your resume, check ATS compatibility,
+            and discover your skill gaps.
+        </p>
+    </header>
+
+
+    <main>
+
+        <!-- INPUT SECTION -->
+
+        <section class="input-section">
+
+            <div class="card">
+
+                <h2>📄 Resume</h2>
+
+                <p class="small">
+                    Paste your resume text below
+                </p>
+
+                <textarea
+                    id="resumeText"
+                    placeholder="Paste your resume content here...
+
+Example:
+Name: Monika
+Education: B.Tech AI & DS
+Skills: Python, SQL, HTML, CSS, JavaScript
+Projects: AI Resume Analyzer
+Experience: Fresher">
+                </textarea>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>💼 Job Description</h2>
+
+                <p class="small">
+                    Paste the job description below
+                </p>
+
+                <textarea
+                    id="jobText"
+                    placeholder="Paste the job description here...
+
+Example:
+We are looking for a Software Developer with knowledge of
+Python, JavaScript, HTML, CSS, SQL, Git and REST API.">
+                </textarea>
+
+            </div>
+
+        </section>
+
+
+        <button class="analyze-btn" onclick="analyzeResume()">
+            🚀 Analyze Resume
+        </button>
+
+
+        <!-- RESULTS -->
+
+        <section id="results" class="results hidden">
+
+            <h2 class="result-title">
+                📊 Resume Analysis Dashboard
+            </h2>
+
+
+            <!-- SCORE CARDS -->
+
+            <div class="score-container">
+
+                <div class="score-card">
+                    <h3>Resume Score</h3>
+                    <div id="resumeScore" class="score">
+                        0
+                    </div>
+                    <span>/ 100</span>
+                </div>
+
+
+                <div class="score-card">
+                    <h3>ATS Score</h3>
+                    <div id="atsScore" class="score">
+                        0
+                    </div>
+                    <span>/ 100</span>
+                </div>
+
+
+                <div class="score-card">
+                    <h3>Job Match</h3>
+                    <div id="matchScore" class="score">
+                        0%
+                    </div>
+                    <span>Match</span>
+                </div>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="result-card">
+
+                <h2>👤 Candidate Summary</h2>
+
+                <p id="summary"></p>
+
+            </div>
+
+
+            <!-- SKILLS -->
+
+            <div class="result-card">
+
+                <h2>🛠️ Skills Analysis</h2>
+
+
+                <h3>Skills Found</h3>
+
+                <div id="skillsFound" class="tags"></div>
+
+
+                <h3>✅ Matching Skills</h3>
+
+                <div id="matchingSkills" class="tags"></div>
+
+
+                <h3>❌ Missing Skills</h3>
+
+                <div id="missingSkills" class="tags"></div>
+
+            </div>
+
+
+            <!-- STRENGTHS -->
+
+            <div class="result-card">
+
+                <h2>💪 Resume Strengths</h2>
+
+                <ul id="strengths"></ul>
+
+            </div>
+
+
+            <!-- WEAKNESSES -->
+
+            <div class="result-card">
+
+                <h2>⚠️ Resume Weaknesses</h2>
+
+                <ul id="weaknesses"></ul>
+
+            </div>
+
+
+            <!-- JOB ROLES -->
+
+            <div class="result-card">
+
+                <h2>💼 Suitable Job Roles</h2>
+
+                <div id="jobRoles" class="roles"></div>
+
+            </div>
+
+
+            <!-- SUGGESTIONS -->
+
+            <div class="result-card">
+
+                <h2>💡 Improvement Suggestions</h2>
+
+                <ul id="suggestions"></ul>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            AI Resume Analyzer | Hackathon Project
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
